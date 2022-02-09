@@ -3,8 +3,8 @@ buildscript {
 		springBootVersion = '1.4.7.RELEASE'
 	}
 	repositories {
-		//mavenCentral()
-		maven { url "http://10.109.32.183:8081/nexus/content/groups/public" }
+		mavenCentral()
+		//maven { url "http://10.109.32.183:8081/nexus/content/groups/public" }
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -13,6 +13,9 @@ buildscript {
 }
 
 
+plugins {
+    id 'org.springframework.boot' version '2.5.0'
+}
 
 
 apply plugin: 'java'
@@ -36,13 +39,13 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
-	//mavenCentral()
-	maven { url "http://10.109.32.183:8081/nexus/content/groups/public" }
+	mavenCentral()
+	//maven { url "http://10.109.32.183:8081/nexus/content/groups/public" }
 }
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile("org.springframework.boot:spring-boot-devtools")
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+	implementation('org.springframework.boot:spring-boot-starter-web')
+	implementation("org.springframework.boot:spring-boot-devtools")
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
