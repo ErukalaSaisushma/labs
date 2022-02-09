@@ -22,6 +22,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'docker'
+apply plugin: 'io.spring.dependency-management'
 
 task buildDocker(type: Docker, dependsOn: build) {
   applicationName = jar.baseName
